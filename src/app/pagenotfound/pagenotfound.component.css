@@ -1,0 +1,167 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+/*@import '~@fortawesome/fontawesome-free/css/all.min.css';*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900@display=swap');
+
+/*:host {
+    background: linear-gradient(to bottom, #A84D92, #714DA5, #2B4DAE); 
+    display: block;  
+}*/
+
+*{
+  box-sizing: border-box;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #2696E9;
+  /* background-size: cover; */
+  /* height: 100vh; */
+}
+
+.home .content{
+  z-index: 888;
+  color: #fff;
+  width: 70%;
+  margin-left: 100px;
+  margin-top: 300px;
+}
+
+.home .content h1{
+  font-size: 4em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+
+.home .content p{
+  margin-bottom: 65px;
+}
+
+.home .content a{
+  background: #fff;
+  padding: 15px 35px;
+  color: #1680AC;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.content-2{
+    color: #fff;
+    margin-left: 270px;
+    margin-top: 95px;
+    font-size: 20px;
+}
+
+.rectangle-1{
+    height: 250px;
+    width: 1000px;
+    border-radius: 40px;
+    margin-left: -50px;
+    margin-top: 80px;
+    background-color: rgba(255, 255, 255, 0.486);
+    
+}
+
+.rectangle-2{
+    height: 250px;
+    width: 1000px;
+    border-radius: 40px;
+    margin-left: -50px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.486);
+    
+}
+
+.rectangle-3{
+    height: 250px;
+    width: 1000px;
+    border-radius: 40px;
+    margin-left: -50px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.486);
+    
+}
+
+.V-line{
+    border-left: 3px solid rgba(254, 255, 254, 0.758);
+    height: 200px;
+}
+
+.footer-logo{
+    width: 80px;
+    height: 80px;
+    margin-left: 700px;
+  }
+  
+.footer-menu li{
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 25px;
+}  
+
+.footer-menu ul a{
+  text-decoration: none;
+  color: #fff;
+}
+  
+.footer-menu{
+  margin-left: 650px;
+  margin-bottom: 20px;
+}
+  
+.footer-menu a:hover{
+  background: none;
+  color: #134164;
+  border-color: #2696E9; 
+}
+  
+.footer ul a{
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  border: 2px solid transparent;
+  line-height: 30px;
+  margin: 0 10px;
+  border-radius: 50%;
+  color: #fff;
+}
+  
+.footer-icons{
+  margin-left: 630px;
+  margin-bottom: 10px;
+}
+  
+.footer-icons ul a:hover{
+  background: none;
+  color: #134164;
+  border-color: #2696E9; 
+}
+  
+.footer-menu-2 a{
+  text-decoration: none;
+  color: #fff;
+  margin-right: 40px;
+}
+  
+.footer-menu-2{
+  margin-top: -3px;
+  margin-left: 620px;
+  margin-bottom: 5px;
+}
+  
+.footer-menu-2 a:hover{
+  background: none;
+  color: #134164;
+  border-color: #2696E9; 
+}

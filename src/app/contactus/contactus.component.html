@@ -1,0 +1,116 @@
+<section>
+    <div class="form-box2">
+      <div class="form-value2">
+          <form (ngSubmit) = "onSubmit" #myForm = "ngForm">
+            <img src="assets/Logo-Foot.png" alt="Logo" width="200px" style="margin-left: 45px; margin-top: -200px;">
+
+              <h2>Register</h2>
+
+              <div class="inputbox2">
+                  <input type="text" class="form-control" id="name" name="name" required [(ngModel)] = "username">
+                  <label for="name">Full Name</label>
+                  <img src="assets/fullname.png" alt="uimage" style="width: 20px;">
+                  <small *ngIf="username">Username is {{username}}</small>
+              </div>
+
+              <div class="inputbox2">
+                  <input type="date" class="form-control" id="age" name="age" max="2005-01-01" style="margin-left: 35px;" required ngModel>
+                  <label for="age">DOB</label>
+              </div>
+
+              <div class="inputbox2">
+                  <input type="number" class="form-control" id="cn" name="cn" required ngModel>
+                  <label for="contact">Contact No.</label>
+                  <img src="assets/phone.png" alt="cimage" style="width: 20px;">
+              </div>
+
+              <div class="inputbox2">    
+                  <input type="email" class="form-control" id="mail" name="mail" required ngModel email #email="ngModel">
+                  <label for="mail">Email</label>
+                  <img src="assets/mail.png" alt="eimage" style="width: 20px;">
+                  <small class="text-danger" *ngIf = "!email.valid && email.touched">Please Enter Valid Email</small>
+              </div>
+
+              <div class="inputbox3" >
+                  <label for="country">Country</label>
+                  <select id="country" class="form-control" name="country" style="margin-left: 130px;" required [ngModel] = "defaultCountry">
+                      <option value="AFG">Afghanistan</option>
+                      <option value="BAH">Bahrain</option>
+                      <option value="BANG">Bangladesh</option>
+                      <option value="COL">Colombia</option>
+                      <option value="COR">Croatia</option>
+                      <option value="DEN">Denmark</option>
+                      <option value="EUC">Ecuador</option>
+                      <option value="FN">Finland</option>
+                      <option value="GER">Germany</option>
+                      <option value="HAW">Hawaii</option>
+                      <option value="IND">Indonesia</option>
+                      <option value="JAP">Japan</option>
+                      <option value="KUW">Kuwait</option>
+                      <option value="LEB">Lebanon</option>
+                      <option value="MAD">Madagascar</option>
+                      <option value="NEP">Nepal</option>
+                      <option value="OM">Oman</option>
+                      <option value="PK">Pakistan</option>
+                      <option value="QTR">Qatar</option>
+                      <option value="RUS">Russia</option>
+                      <option value="SIG">Singapore</option>
+                      <option value="TUR">Turkey</option>
+                      <option value="UKR">Ukraine</option>
+                      <option value="VIE">Vietnam</option>
+                      <option value="YEM">Yemen</option>
+                      <option value="ZIM">Zimbabwe</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                <div class="custom-control custom-radio" *ngFor = "let gender of genders">
+                    <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}" required [ngModel] = "defaultGender">
+                    <label class="custom-control-input"  for="{{gender.id}}" style="margin-top: -50px;">{{gender.value}}</label>
+                </div>
+              </div>
+
+              <div ngModelGroup = "userdetails" #userdetails = "ngModelGroup" >
+                    <div class="inputbox2">
+                        <input type="text" class="form-control" id="uname" name="uname" required ngModel>
+                        <label for="uname">Username</label>
+                        <img src="assets/username.png" alt="uimage" style="width: 20px;">
+                    </div>
+                    
+                    <div class="inputbox2">
+                        <input type="password" class="form-control" id="pass" name="pass" required ngModel>
+                        <label for="pass">Password</label>
+                        <img src="assets/password.png" alt="pimage" style="width: 20px;">
+                    </div>
+                </div>
+              
+              <div class="inputbox2">
+                  <input type="text" class="form-control" id="lp" name="lp" required ngModel>
+                  <label for="lp">Linkedin Profile</label>
+                  <img src="assets/linkedin.png" alt="lpimage" style="width: 20px;">
+              </div>
+
+              <button>Register</button>
+
+              <div class="signin">
+                  <p>Already have an account <a class="nav-link" routerLink="/login" routerLinkActive="active" style="color: white;" target="_blank">Signin</a></p>
+              </div>
+          </form>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-2" *ngIf ="submitted">
+        <div class="col-md-6 text-left bg-white rounded shadow py-3">
+            <h2>USER DETAILS</h2>
+            <p>Name: </p>
+            <p>Date Of Birth: </p>
+            <p>Contact No.: </p>
+            <p>Email: </p>
+            <p>Country: </p>
+            <p>Gender: </p>
+            <p>Username: </p>
+            <p>Password: </p>
+            <p>Linkedin Profile: </p>
+        </div>
+    </div>
+</section>

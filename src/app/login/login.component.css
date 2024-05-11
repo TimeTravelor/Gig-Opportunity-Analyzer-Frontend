@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900@display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "sans-serif";
+}
+section{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  min-height: 1500px;
+  width: 100%;
+  background: #2696E9;
+  /* background: linear-gradient(to bottom, #A84D92, #714DA5, #2B4DAE); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.form-box{
+  position: relative;
+  width: 400px;
+  height: 550px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 38%;
+  margin-top: -40%;
+}
+h1{
+  font-size: 3em;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-top: -10px;
+}
+.inputbox{
+  position: relative;
+  margin: 30px, 0;
+  width: 310px;
+  border-bottom: 2px solid white;
+}
+.inputbox label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 15px;
+  transition: .5s;
+}
+input:focus ~ label,
+input:focus ~ :valid{
+  top: -5px;
+}
+.inputbox input{
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 35px 0 5px;
+  color: white;
+}
+.inputbox img{
+  position: absolute;
+  right: 8px;
+  top: 20px;
+}
+.forget{
+  margin-top: 15px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: center; 
+}
+.forget label input{
+  margin-right: 3px;   
+}
+.forget label a{
+  text-decoration: none;
+}
+.forget a:hover{
+  text-decoration: underline;
+}
+button{
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: white;
+  color: #000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5%;
+}
+.register{
+  font-size: .9em;
+  color: white;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+.register p a{
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+.register p a:hover{
+  text-decoration: underline;
+}

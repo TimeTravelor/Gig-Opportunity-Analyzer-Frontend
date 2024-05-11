@@ -1,0 +1,16 @@
+<!-- My name is {{dynName}}
+<br><br>
+{{55/5}}
+<br><br>
+{{"Welcome "+dynName+"!"}}
+<br><br>
+{{dynName.length}}
+<br><br>
+{{dynName.toUpperCase()}}
+<br><br>
+{{myMethod()}}
+<br><br>
+My app status is {{appStatus? status1:status2}} -->
+
+<input type="text" [disabled]= "!enable" name="" id="" [value]="dynName">
+<input type="text" [hidden]= "enable" name="" id="" bind-value="dynName">
