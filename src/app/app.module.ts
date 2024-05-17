@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MyContainerComponent } from './myContainer/myContainer.component';
@@ -33,6 +35,10 @@ import { WashingmachineComponent } from './products/washingmachine/washingmachin
 import { CardComponent } from './card/card.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ServicesComponent } from './services/services.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ApiService } from './api.service';
+
 
 
 const AppRoutes:Routes = [
@@ -77,18 +83,24 @@ const AppRoutes:Routes = [
     WashingmachineComponent,
     CardComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    ServicesComponent,
+    ProfileComponent
   ],
+
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

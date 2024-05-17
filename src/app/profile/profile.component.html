@@ -1,0 +1,73 @@
+<section>
+  <h1>WELCOME BACK!</h1>
+
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="SEARCH BY YOUR SKILL" />
+    <span class="search-icon"><img src="assets/search.png"></span>
+  </div>    
+
+  <div class="container">
+    <div class="sidebar1">
+      <ul>
+        <li><a href="#">Website</a></li>
+        <li><a href="#">Github</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">X</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar2">
+      <div class="sidebar-item">Total Savings</div>
+    </div>
+
+    <div class="sidebar3">
+      <div class="sidebar-item">Search Remaining</div>
+    </div>
+
+    <div class="sidebar4">
+      <div class="sidebar-item">Version</div>
+    </div>
+
+    <div class="main-content">
+      <div class="personal-info">
+        <h2>Personal Information</h2>
+
+        <p><strong>Full Name:</strong>
+          <span *ngIf="!isEditing">{{ user.fullName }}</span>
+          <input *ngIf="isEditing" [(ngModel)]= "user.fullName" type="text" />
+        </p>
+        <p><strong>Email Address:</strong> {{ user.email }}</p>
+        <p><strong>Contact Number:</strong>
+          <span *ngIf="!isEditing">{{ user.contactno }}</span>
+          <input *ngIf="isEditing" [(ngModel)]= "user.contactno" type="text" />
+        </p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Password:</strong>
+          <span *ngIf="!isEditing">{{ user.password }}</span>
+          <input *ngIf="isEditing" [(ngModel)]= "user.password" type="password" />
+        </p>
+        <p><strong>Country:</strong>
+          <span *ngIf="!isEditing">{{ user.country }}</span>
+          <input *ngIf="isEditing" [(ngModel)]= "user.country" type="text" />
+        </p>
+        <p><strong>Birthdate:</strong>
+          <span *ngIf="!isEditing">{{ user.age }}</span>
+          <input *ngIf="isEditing" [(ngModel)]= "user.age" type="date" />
+        </p>
+        <p><strong>Gender:</strong>
+          <span *ngIf="!isEditing">{{ user.gender }}</span>
+          <input *ngIf="isEditing" [(ngModel)]= "user.gender" type="text" />
+        </p>
+        <p><strong>LinkedIn:</strong>
+          <span *ngIf="!isEditing">{{ user.linkedIn }}</span>
+          <input *ngIf="isEditing" [(ngModel)]= "user.linkedIn" type="text" />
+        </p>
+        <button *ngIf="!isEditing" (click)="edit()">Edit</button>
+        <button *ngIf="isEditing" (click)="save()">Save</button>
+        <button *ngIf="isEditing" (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</section>

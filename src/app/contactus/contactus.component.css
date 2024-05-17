@@ -12,8 +12,7 @@ section{
   align-items: center;
   min-height: 1500px;
   width: 100%;
-  background: #2696E9;
-  /* background: linear-gradient(to bottom, #A84D92, #714DA5, #2B4DAE); */
+  background-image: linear-gradient(to  bottom right, #000000, #090415, #110829, #1a0c3e, #231052, #2c1567, #34197c, #3d1d90, #4621a5, #4e25b9);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -22,9 +21,9 @@ section{
 .form-box2{
   position: relative;
   width: 550px;
-  height: 1050px;
+  height: 1000px;
   background: transparent;
-  border: 2px solid rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.8);
   border-radius: 20px;
   backdrop-filter: blur(5px);
   display: flex;
@@ -47,23 +46,8 @@ h2{
   border-bottom: 2px solid white;
 }
 
-.inputbox2 label{
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 15px;
-  transition: .5s;
-}
-
-.inputbox3 label{
-  color: white;
-}
-
-input:focus ~ label,
-input:focus ~ :valid{
-  top: -5px;
+.inputbox2 input::placeholder{
+	color: white;
 }
 
 .inputbox2 input{
@@ -103,12 +87,16 @@ button{
   margin: 25px 0 10px;
 }
 
-.register p a{
+.signin p a{
   text-decoration: none;
   color: white;
   font-weight: 600;
 }
 
-.register a:hover{
+.signin a:hover{
   text-decoration: underline;
+}
+
+.form-control::-moz-placeholder{
+  color: white;
 }

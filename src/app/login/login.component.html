@@ -1,43 +1,44 @@
 <section>
-    <div class="form-box">
+  <div class="form-box">
       <div class="form-value">
-          <form (ngSubmit)="onSubmit" #myForm="ngForm">
+        <form (ngSubmit)= "onSubmit(myForm)" #myForm="ngForm">
+          <img src="assets/Logo-Foot.png" alt="Logo" width="100px" style="margin-left: 35%; ">
 
-            <img src="assets/Logo-Foot.png" alt="Logo" width="100px" style="margin-left: 35%; ">
+          <h1>Signin</h1>
 
-              <h1>Signin</h1>
-
-              <div ngModelGroup = "userdetails" #userdetails = "ngModelGroup">
-
-                <div class="inputbox">
-                    <input type="text"  class="form-control" id="uname" name="uname" required ngModel>
-                    <label for="uname">Username</label>
-                    <img src="assets/username.png" alt="uimage" style="width: 20px;">
-                </div>
-
-                <div class="inputbox">
-                    <input type="password" class="form-control"  id="pass" name="pass" required ngModel>
-                    <label for="pass">Password</label>
-                    <img src="assets/password.png" alt="pimage" width="20px">
-                </div>
-
-                <span class="text-danger" *ngIf = "!userdetails.valid && userdetails.touched">Please Enter Valid Details!</span>
-              </div>
+          <div ngModelGroup="userdetails" #userdetails="ngModelGroup">
+            <div class="inputbox">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Email" required ngModel>
+              <!-- <label for="uname">Username</label> -->
+              <img src="assets/username.png" alt="uimage" style="width: 20px;">
+            </div>
               
-              <div class="forget">
-                <a href="#" style="color: white; margin-left: 65%;">Forgot Password?</a>
-              </div>
+            <div class="inputbox">
+              <input type="password" class="form-control" id="pass" name="password" placeholder="Password" ngModel>
+              <!-- <label for="pass">Password</label> -->
+              <img src="assets/password.png" alt="pimage" width="20px">
+            </div>
+              
+            <span class="text-danger" *ngIf="!userdetails.valid && userdetails.touched">Please Enter Valid Details!</span>
 
-              <button type="submit" [disabled] = "!myForm.valid">Log in</button>
+            <div *ngIf= "showSuccessMessage" style="color: #fff;">{{ successMessage }}</div>
+            <div *ngIf= "errorMessage" style="color: #fff;">{{ errorMessage }}</div>
+          </div>
 
-              <div class="register">
-                  <p>Don't have an account <a class="nav-link" routerLink="/contactus" routerLinkActive="active" style="color: white;" target="_blank">Register</a></p>
-                  <p>Or sign up using</p>
-                  <img src="assets/gmail.png" alt="gmail" width="30px">
-                  <img src="assets/linkedin.png" alt="linkedin" width="30px" style="margin-left: 10px;">
-              </div>
-          </form>
+          <div class="forget">
+            <a class="nav-link" routerLink="#" routerLinkActive="active" style="color: white; margin-left: 65%; font-size: 12px;">Forgot Password</a>
+          </div>
+
+          <button type="submit" [disabled] = "!myForm.valid">Log in</button>
+
+          <div class="register">
+            <p>Don't have an account <a class="nav-link" routerLink="/contactus" routerLinkActive="active" style="color: white;" target="_blank">Register</a></p>
+            <p>Or sign up using</p>
+            <img src="assets/gmail.png" alt="gmail" width="30px">
+            <img src="assets/linkedin.png" alt="linkedin" width="30px" style="margin-left: 10px;">
+          </div>
+        </form>
       </div>
-    </div>  
+  </div>  
 </section>
   

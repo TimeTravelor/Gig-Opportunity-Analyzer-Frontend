@@ -1,11 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-/*@import '~@fortawesome/fontawesome-free/css/all.min.css';*/
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900@display=swap');
 
-/*:host {
-    background: linear-gradient(to bottom, #A84D92, #714DA5, #2B4DAE); 
-    display: block;  
-}*/
 
 *{
   box-sizing: border-box;
@@ -20,17 +15,179 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #2696E9;
-  /* background-size: cover; */
-  /* height: 100vh; */
+  background-image: linear-gradient(to  bottom right, #000000, #090415, #110829, #1a0c3e, #231052, #2c1567, #34197c, #3d1d90, #4621a5, #4e25b9);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+/*=== Small stars ======*/
+.small-stars {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	transform: rotate(5deg);
+	-webkit-animation: rotation 15s infinite;
+	animation: rotation 15s infinite;
+}
+.small-stars .star {
+	display: inline-block;
+	width: 2px;
+	height: 2px;
+	margin: 5%;
+	border: 1px solid white;
+	border-radius: 50%;
+	box-shadow: 0 0 15px white;
+	opacity: .5;
+	filter: alpha(opacity=50);
+	-webkit-animation: blink 15s infinite;
+	animation: blink 15s infinite;
+}
+.small-stars .star i {
+	display: block;
+	width: 1px;
+	height: 1px;
+	border: 1px solid white;
+	border-radius: 5px 2px;
+	background: white;
+}
+
+/* Medium starts */
+.medium-stars {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+.medium-stars .star {
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	margin: 10% 10%;
+	border: 1px solid white;
+	border-radius: 50%;
+	box-shadow: 0 0 25px white;
+}
+.medium-stars .star i {
+	display: block;
+	width: 3px;
+	height: 3px;
+	border: 1px solid white;
+	border-radius: 5px 2px;
+	background: white;
+}
+
+/*============ Animations ============*/
+@-webkit-keyframes blink {
+	from {
+		box-shadow: 0 0 15px white;
+	}
+	to {
+		box-shadow: 0 0 50px white;
+	}
+}
+@keyframes blink {
+	from {
+		box-shadow: 0 0 15px white;
+	}
+	to {
+		box-shadow: 0 0 50px white;
+	}
+}
+@-webkit-keyframes melting {
+	from {
+		background: rgba(255,255,255,1);
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+	to {
+		background: rgba(255,255,255,0);
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+}
+@keyframes melting {
+	from {
+		background: rgba(255,255,255,1);
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+	to {
+		background: rgba(255,255,255,0);
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+}
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(5deg);
+		        transform: rotate(5deg);
+	}
+	to {
+		-webkit-transform: rotate(15deg);
+		        transform: rotate(15deg);
+	}
+}
+@keyframes rotation {
+	from {
+		-webkit-transform: rotate(5deg);
+		        transform: rotate(5deg);
+	}
+	to {
+		-webkit-transform: rotate(15deg);
+		        transform: rotate(15deg);
+	}
+}
+@-webkit-keyframes starfall {
+	0% {
+		left: 15%;
+		top: 50%;
+	}
+	67% {
+		left: 15%;
+		top: 50%;
+	}
+	80% {
+		left: 50%;
+		top: 150%;
+	}
+	100% {
+		left: 50%;
+		top: 150%;
+	}
+}
+@keyframes starfall {
+	0% {
+		left: 15%;
+		top: 50%;
+	}
+	67% {
+		left: 15%;
+		top: 50%;
+	}
+	80% {
+		left: 50%;
+		top: 150%;
+	}
+	100% {
+		left: 50%;
+		top: 150%;
+	}
+}
+/* -------------------------------------------------------------------------------------------------------------------------- */
 
 .home .content{
   z-index: 888;
   color: #fff;
   width: 70%;
   margin-left: 100px;
-  margin-top: 300px;
+  margin-top: 350px;
 }
 
 .home .content h1{
@@ -43,7 +200,8 @@
 }
 
 .home .content p{
-  margin-bottom: 65px;
+  margin-top: 160px;
+  /* margin-bottom: 65px; */
 }
 
 .home .content a{
@@ -57,75 +215,162 @@
 }
 
 .content-2{
-    color: #fff;
-    margin-left: 270px;
-    margin-top: 95px;
-    font-size: 20px;
+  color: #fff;
+  margin-left: 270px;
+  margin-top: 95px;
+  font-size: 20px;
 }
 
-.rectangle-1{
-    height: 250px;
-    width: 1000px;
-    border-radius: 40px;
-    margin-left: -50px;
-    margin-top: 80px;
-    background-color: rgba(255, 255, 255, 0.486);
-    
+.card {
+  width: 1050px;
+  height: 270px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -40px;
 }
 
-.rectangle-2{
-    height: 250px;
-    width: 1000px;
-    border-radius: 40px;
-    margin-left: -50px;
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.486);
-    
+.card-content {
+  width: 90%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.486); 
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
 }
 
-.rectangle-3{
-    height: 250px;
-    width: 1000px;
-    border-radius: 40px;
-    margin-left: -50px;
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.486);
-    
+.text-left, .text-right {
+  color: white;
+  font-size: 20px;
 }
 
-.V-line{
-    border-left: 3px solid rgba(254, 255, 254, 0.758);
-    height: 200px;
+.text-left {
+  margin-left: 80px;
+}
+
+.text-center{
+  color: #fff;
+}
+
+.text-right {
+  margin-right: 100px;
+}
+
+.card-content::before, .card-content::after {
+  content: '';
+  position: absolute;
+  height: 80%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-content::before {
+  left: 24%;
+}
+
+.card-content::after {
+  right: 24%;
+}
+
+
+.faq {
+  font-family: Arial, sans-serif;
+  color: white;
+  /* background-color: #4a148c; */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.faq h1 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  /* border-top: 1px solid #3e3e3e; */
+  padding: 10px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid #3e3e3e;
+  padding: 10px 0;
+}
+
+.faq-answer {
+  padding: 10px 0;
+}
+
+.card-bottom{
+  width: 1100px;
+  height: 200px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgb(255, 255, 255); 
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 240px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.my-button{ 
+  background-color: #013963;
+  color: #ffffff;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: -10px;
+  margin-left: 500px;
+}
+
+.my-button:hover {
+  background-color: #013963;
+}
+
+.my-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .footer-logo{
-    width: 80px;
-    height: 80px;
-    margin-left: 700px;
-  }
-  
+  width: 80px;
+  height: 80px;
+  margin-left: 700px;
+}
+
 .footer-menu li{
   list-style-type: none;
   display: inline-block;
-  margin-right: 25px;
-}  
+  margin-left: 50px;
+}
 
 .footer-menu ul a{
   text-decoration: none;
   color: #fff;
 }
-  
+
 .footer-menu{
-  margin-left: 650px;
+  margin-left: 580px;
   margin-bottom: 20px;
 }
-  
-.footer-menu a:hover{
+
+.footer-menu ul a:hover{
   background: none;
-  color: #134164;
-  border-color: #2696E9; 
+  color: #83b4da;
+  /* border-color: #2696E9;  */
 }
-  
+
 .footer ul a{
   height: 40px;
   width: 40px;
@@ -136,32 +381,44 @@
   border-radius: 50%;
   color: #fff;
 }
-  
+
 .footer-icons{
   margin-left: 630px;
   margin-bottom: 10px;
 }
-  
+
 .footer-icons ul a:hover{
   background: none;
-  color: #134164;
-  border-color: #2696E9; 
+  color: #83b4da;
+  /* border-color: #2696E9;  */
 }
-  
+
 .footer-menu-2 a{
   text-decoration: none;
   color: #fff;
-  margin-right: 40px;
 }
-  
+
 .footer-menu-2{
   margin-top: -3px;
-  margin-left: 620px;
+  margin-left: 800px;
   margin-bottom: 5px;
 }
-  
-.footer-menu-2 a:hover{
-  background: none;
-  color: #134164;
-  border-color: #2696E9; 
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0079fa;
+  color: #fff;
+  border: none;
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  padding: 0; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #5198e4;
 }

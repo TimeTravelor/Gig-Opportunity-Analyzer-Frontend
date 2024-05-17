@@ -1,17 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900@display=swap');
 
-/*:host {
-    background: linear-gradient(to bottom, #A84D92, #714DA5, #2B4DAE); 
-    display: block;  
-}*/
-
 *{
   box-sizing: border-box;
-  /* background: #2696E9; */
   background-size: cover;
   font-family: "Poppins", sans-serif;
 }
+
 .home{
   position: relative;
   width: 100%;
@@ -19,9 +14,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #2696E9;
-  /* background-size: cover; */
-  /* height: 100vh; */
+  background-image: linear-gradient(to  bottom right, #000000, #090415, #110829, #1a0c3e, #231052, #2c1567, #34197c, #3d1d90, #4621a5, #4e25b9);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home .content{
@@ -167,10 +162,9 @@
   margin-bottom: 20px;
 }
 
-.footer-menu ul:hover{
+.footer-menu ul a:hover{
   background: none;
-  color: #134164;
-  border-color: #2696E9; 
+  color: #83b4da;
 }
 
 .footer ul a{
@@ -191,8 +185,7 @@
 
 .footer-icons ul a:hover{
   background: none;
-  color: #134164;
-  border-color: #2696E9; 
+  color: #83b4da;
 }
 
 .footer-menu-2 a{
@@ -204,12 +197,25 @@
 
 .footer-menu-2{
   margin-top: -3px;
-  margin-left: 620px;
+  margin-left: 800px;
   margin-bottom: 5px;
 }
 
-.footer-menu-2 a:hover{
-  background: none;
-  color: #134164;
-  border-color: #2696E9; 
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #012f60;
+  color: #fff;
+  border: none;
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  padding: 0; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #016fe4;
 }
