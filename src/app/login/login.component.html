@@ -4,7 +4,7 @@
         <form (ngSubmit)= "onSubmit(myForm)" #myForm="ngForm">
           <img src="assets/Logo-Foot.png" alt="Logo" width="100px" style="margin-left: 35%; ">
 
-          <h1>Signin</h1>
+          <h1>Sign in</h1>
 
           <div ngModelGroup="userdetails" #userdetails="ngModelGroup">
             <div class="inputbox">
@@ -32,7 +32,7 @@
           <button type="submit" [disabled] = "!myForm.valid">Log in</button>
 
           <div class="register">
-            <p>Don't have an account <a class="nav-link" routerLink="/contactus" routerLinkActive="active" style="color: white;" target="_blank">Register</a></p>
+            <p>Don't have an account <a class="nav-link" routerLink="/register" routerLinkActive="active" style="color: white;" >Register</a></p>
             <p>Or sign up using</p>
             <img src="assets/gmail.png" alt="gmail" width="30px">
             <img src="assets/linkedin.png" alt="linkedin" width="30px" style="margin-left: 10px;">
