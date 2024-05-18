@@ -21,7 +21,7 @@ export class AppComponent {
 
   logout() {
     this.isLoggedIn = false;
-    this.router.navigate(['/contactus']);
+    this.router.navigate(['/register']);
   }
 }
 

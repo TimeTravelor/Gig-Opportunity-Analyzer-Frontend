@@ -31,8 +31,8 @@ export class LoginComponent {
           console.log('Login successful:', response);
           this.successMessage = 'Login successful!'; // Set success message
           this.showSuccessMessage = true; // Show success message
-          this.userData = response.user;
-          localStorage.setItem('userData', JSON.stringify(this.userData));
+          this.userData = response;
+          localStorage.setItem('userData', JSON.stringify(this.userData)); 
           this.router.navigate(['/profile']); // Navigate to profile page
         },
         (error: { error: { message: any; }; }) => {

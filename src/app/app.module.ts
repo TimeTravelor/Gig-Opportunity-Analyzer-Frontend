@@ -25,9 +25,9 @@ import { NgforComponent } from './ngfor/ngfor.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsComponent } from './products/products.component';
-import { ContactusComponent } from './contactus/contactus.component';
+import { ContactusComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PricingComponent } from './pricing/pricing.component';
 import { LaptopComponent } from './products/laptop/laptop.component';
 import { MobileComponent } from './products/mobile/mobile.component';
 import { TelevisionComponent } from './products/television/television.component';
@@ -46,7 +46,7 @@ const AppRoutes:Routes = [
   {path:'login', component: LoginComponent},
   {path:'home', component: HomeComponent},
   {path:'about', component: AboutComponent},
-  {path:'contactus', component: ContactusComponent},
+  {path:'register', component: ContactusComponent},
   {path:'buy-products', component: ParentComponent},
   {path:'products', component: ProductsComponent, children: [
     {path:'laptop', component: LaptopComponent},
@@ -54,7 +54,7 @@ const AppRoutes:Routes = [
     {path:'television', component: TelevisionComponent},
     {path:'washingmachine', component: WashingmachineComponent}
   ]},
-  {path:'**', component: PagenotfoundComponent} //wildcard route should always be in the end
+  {path:'**', component: PricingComponent} //wildcard route should always be in the end
 ]
 @NgModule({
   declarations: [
@@ -76,7 +76,7 @@ const AppRoutes:Routes = [
     ProductsComponent,
     ContactusComponent,
     LoginComponent,
-    PagenotfoundComponent,
+    PricingComponent,
     LaptopComponent,
     MobileComponent,
     TelevisionComponent,

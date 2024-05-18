@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-pagenotfound',
-  templateUrl: './pagenotfound.component.html',
-  styleUrls: ['./pagenotfound.component.css']
+  selector: 'app-pricing',
+  templateUrl: './pricing.component.html',
+  styleUrls: ['./pricing.component.css']
 })
-export class PagenotfoundComponent {
+export class PricingComponent {
   faqs = [
     { question: '1. Is Gig Opportunity Analyzer a freelance platform?', answer: 'Gig Opportunity Analyzer is web-based platform that helps freelancers find the best gigs tailored to their skills and preferences from various marketplaces.', showAnswer: false },
     { question: '2. How does Gig Opportunity Analyzer works?', answer: 'Gig Opportunity Analyzer works by analyzing freelancers\' skills and preferences to match them with the best gig opportunities across various platforms.', showAnswer: false },
