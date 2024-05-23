@@ -29,7 +29,8 @@ export class LoginComponent {
       this.apiService.login(this.formData).subscribe(
         (response: any) => {
           console.log('Login successful:', response);
-          this.successMessage = 'Login successful!'; // Set success message
+          this.successMessage = ''; // Set success message
+          alert('Login successful!');
           this.showSuccessMessage = true; // Show success message
           this.userData = response;
           localStorage.setItem('userData', JSON.stringify(this.userData)); 

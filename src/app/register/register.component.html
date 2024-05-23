@@ -14,7 +14,7 @@
               </div>
 
               <div class="inputbox2">
-                  <input type="date" class="form-control" id="age" name="age" max="2005-01-01" style="margin-left: 25px;" required ngModel>
+                  <input type="date" class="form-control" id="age" name="age" max="2005-01-01" style="width: 300px;" required ngModel>
                   <!-- <label for="age">DOB</label> -->
               </div>
 
@@ -91,13 +91,32 @@
                   <input type="text" class="form-control" id="lp" name="lp" required ngModel placeholder="Enter LinkedIn Link">
                   <!-- <label for="lp">Linkedin Profile</label> -->
                   <img src="assets/linkedin.png" alt="lpimage" style="width: 20px;">
-              </div>
+                </div>
               
+                <div class="form-group" style="margin-top: 15px;" >
+                    <label for="country" style="color: #fff;">Version</label>
+                    <select id="country" class="form-control" name="version" 
+                    style="margin-left: 90px; margin-top: -25px; width: 200px; background: transparent; border: 2px solid rgba(255,255,255,0.8); color: #636c72; background-color: transparent;" 
+                    required [ngModel] = "defaultVersion">
+                        <option value="Free">Free</option>
+                        <option value="Trio">Trio</option>
+                        <option value="Deca">Deca</option>
+                    </select>
+                    <p class="inline-text">** If need more information visit our page<a class="nav-link inline-link" routerLink="/pricing" routerLinkActive="active" style="margin-left: 230px; margin-top: -16.5px;">pricing</a></p>
+                </div>
+
+                <br>
+
+                <div class="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="newsletter" [(ngModel)] = "newsletter">
+                    <label for="newsletter">Do you want to recieve updates and news first?</label>
+                </div>
+
               <button type="submit">Register</button> 
               <!-- (click)= "msgAlert()" -->
 
               <div class="signin">
-                  <p style="margin-left: -60px;">Already have an account <a class="nav-link" routerLink="/login" routerLinkActive="active" style="color: white; margin-top: -22px; margin-left: 232px;">Signin</a></p>
+                  <p style="margin-left: -50px;">Already have an account <a class="nav-link" routerLink="/login" routerLinkActive="active" style="color: white; margin-top: -24px; margin-left: 260px;">Signin</a></p>
               </div>
               <div *ngIf="showSuccessMessage" class="success-message" style="color: #fff;">{{ successMessage }}</div>
           </form>

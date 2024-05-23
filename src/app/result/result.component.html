@@ -1,0 +1,60 @@
+<section>
+  <h1 class="main-heading">Best Gig</h1>
+
+  <div class="gig-result">
+    <div class="container">
+      <p *ngIf= "bestGig.jobTitle"><strong>Job Title:</strong>
+        <br>
+        <span > {{ bestGig.jobTitle }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.employerName"><strong>Employer Name:</strong>
+        <br>
+        <span > {{ bestGig.employerName }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.budget"><strong>Budget:</strong>
+        <br>
+        <span > {{ bestGig.budget }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.budgetType"><strong>Budget Type: </strong>
+        <br>
+        <span > {{ bestGig.budgetType }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.budgetTime"><strong>Budget Time: </strong>
+        <br>
+        <span > {{ bestGig.budgetTime }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.budgetDuration"><strong>Budget Duration:</strong>
+        <br>
+        <span > {{ bestGig.budgetDuration }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.skills"><strong>Skills: </strong>
+        <br>
+        <span > {{ bestGig.skills }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.website"><strong>Website:</strong>
+        <br>
+        <span > {{ bestGig.website }} </span>
+      </p>
+
+      <p *ngIf= "bestGig.jobTags"><strong>Job Tags:</strong>
+        <br>
+        <span > {{ bestGig.jobTags }} </span>
+      </p>
+      
+      <p *ngIf= "bestGig.jobDescription"><strong>Job Description:</strong>
+        <br>
+        <span > {{ bestGig.jobDescription }} </span>
+      </p>
+    </div>
+  </div>
+  <!-- <div *ngIf = "!bestGig" class="no-result" style="color: white;">
+    <p>No gig result available. Perform a search to see the best gig.</p>
+  </div> -->
+</section>

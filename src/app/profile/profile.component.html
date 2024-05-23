@@ -1,73 +1,137 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
 <section>
-  <h1>WELCOME BACK!</h1>
+  <h1>Welcome Back! <br> {{user.fullName}} </h1>
 
-  <div class="search-container">
-    <input type="text" class="search-input" placeholder="SEARCH BY YOUR SKILL" />
-    <span class="search-icon"><img src="assets/search.png"></span>
-  </div>    
+  <form class="search-container" (ngSubmit) = "onSubmit(myForm)" #myForm = "ngForm">
+    <div  class="search_1">
+      <input type="text" ngModel class="search-input" id="skill" name="skill" placeholder="Search by your skill" required="Please provide skill name"/>
+      <!-- <span class="search-icon" (click)="searchSkill()"><img src="assets/search.png"></span> -->
+    </div>
+    
+    <div class="search_2">
+      <input type="text" ngModel class="search-input" id="username" name="username" placeholder="Enter Username" required="Please fill username fields!"/>
+    </div>
+    
+    <!-- <div class="search_3">
+      <input type="text" [(ngModel)]= "jobTitle" class="search-input" placeholder="Enter Job Title Keywords" />
+    </div>
+    
+    <div class="search_4">
+      <input type="text" [(ngModel)]= "jobDescription" class="search-input" placeholder="Enter Job Description Keywords" />
+    </div> -->
+    
+    <button class="search-button">Search</button>
+    
+    <div *ngIf="errorMessage" class="error-message" style="color: #fff; margin-left: -110px;"><b>{{ errorMessage }}</b></div>
+  </form>
+  
+  
 
   <div class="container">
-    <div class="sidebar1">
-      <ul>
-        <li><a href="#">Website</a></li>
-        <li><a href="#">Github</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">X</a></li>
-      </ul>
+    <div class="sidebar-container">
+      <div class="sidebar1">
+        <ul>
+          <li style="margin-top: 45px;"><a><i class="fab fa-github"><br>https://github.com/</i></a></li>
+          <li><a><i class="fab fa-linkedin"><br>https://www.linkedin.com/in/hajrah-asim-682b641b6/</i></a></li>
+          <li><a><i class="fab fa-facebook-f"><br>https://www.facebook.com/hajrah-asim</i></a></li>
+          <li><a><i class="fab fa-instagram"><br> https://www.instagram.com/accounts/hajrah-asim</i></a></li>
+        </ul>
+      </div>
+  
+      <div class="sidebar2">
+        <div class="sidebar-item" style="text-align: center;">Total Savings</div>
+        <strong style="text-align: center; font-size: 25px;">$500</strong>
+      </div>
+  
+      <div class="sidebar3">
+        <div class="sidebar-item" style="text-align: center;">Search Remaining</div>
+        <strong style="text-align: center; font-size: 25px;">{{ user.searchCount }}</strong>
+      </div>
+  
+      <div class="sidebar4">
+        <div class="sidebar-item" style="text-align: center;">Version</div>
+        <strong style="text-align: center; font-size: 25px;">{{user.searchVersion}}</strong>
+      </div>
     </div>
-
-    <div class="sidebar2">
-      <div class="sidebar-item">Total Savings</div>
-    </div>
-
-    <div class="sidebar3">
-      <div class="sidebar-item">Search Remaining</div>
-    </div>
-
-    <div class="sidebar4">
-      <div class="sidebar-item">Version</div>
-    </div>
+    
 
     <div class="main-content">
-      <div class="personal-info">
+      <div class="personal-info" [ngClass] = "{'editing-form': isEditing}">
         <h2>Personal Information</h2>
 
         <p><strong>Full Name:</strong>
-          <span *ngIf="!isEditing">{{ user.fullName }}</span>
-          <input *ngIf="isEditing" [(ngModel)]= "user.fullName" type="text" />
+          <span *ngIf="!isEditing"> {{ user.fullName }}</span>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.fullName" type="text" />
         </p>
+
         <p><strong>Email Address:</strong> {{ user.email }}</p>
+
         <p><strong>Contact Number:</strong>
-          <span *ngIf="!isEditing">{{ user.contactno }}</span>
-          <input *ngIf="isEditing" [(ngModel)]= "user.contactno" type="text" />
+          <span *ngIf="!isEditing"> {{ user.contactNo }}</span>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.contactno" type="text" />
         </p>
+
         <p><strong>Username:</strong> {{ user.username }}</p>
+
         <p><strong>Password:</strong>
-          <span *ngIf="!isEditing">{{ user.password }}</span>
-          <input *ngIf="isEditing" [(ngModel)]= "user.password" type="password" />
+          <span *ngIf="!isEditing"> ************</span>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.password" type="password" />
         </p>
+
         <p><strong>Country:</strong>
-          <span *ngIf="!isEditing">{{ user.country }}</span>
-          <input *ngIf="isEditing" [(ngModel)]= "user.country" type="text" />
+          <span *ngIf="!isEditing"> {{ user.country }}</span>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.country" type="text" />
         </p>
+
         <p><strong>Birthdate:</strong>
-          <span *ngIf="!isEditing">{{ user.age }}</span>
-          <input *ngIf="isEditing" [(ngModel)]= "user.age" type="date" />
+          <span *ngIf="!isEditing"> {{ user.age }}</span>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.age" type="date" />
         </p>
+        
         <p><strong>Gender:</strong>
-          <span *ngIf="!isEditing">{{ user.gender }}</span>
-          <input *ngIf="isEditing" [(ngModel)]= "user.gender" type="text" />
+          <span *ngIf="!isEditing"> {{ user.gender }}</span>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.gender" type="text" />
         </p>
+
         <p><strong>LinkedIn:</strong>
-          <span *ngIf="!isEditing">{{ user.linkedIn }}</span>
-          <input *ngIf="isEditing" [(ngModel)]= "user.linkedIn" type="text" />
+          <span *ngIf="!isEditing"> {{ user.linkedIn }}</span>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.linkedIn" type="text" />
         </p>
-        <button *ngIf="!isEditing" (click)="edit()">Edit</button>
-        <button *ngIf="isEditing" (click)="save()">Save</button>
-        <button *ngIf="isEditing" (click)="cancel()">Cancel</button>
+
+        <button *ngIf="!isEditing" (click)="edit()" class="edit-button">Edit</button>
+
+        <div class="editing-buttons">
+          <button *ngIf="isEditing" (click)="save()" class="save-button">Save</button>
+          <button *ngIf="isEditing" (click)="cancel()" class="cancel-button">Cancel</button>
+        </div>
       </div>
     </div>
+  </div>
+
+  <hr  style="color: white; height: 50px; width: 90%; margin-left: 0px; margin-top: 1850px;">
+  <div class="footer">
+    <img class="footer-logo" src="assets/Logo-Foot.png">
+    <div class="footer-menu">
+      <ul>
+        <li><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a class="nav-link" routerLink="/about" routerLinkActive="active">AboutUs</a></li>
+        <li><a class="nav-link" routerLink="/buy-products" routerLinkActive="active">Pricing</a></li>
+      </ul>
+    </div>
+            
+    <div class="footer-icons">
+      <ul>
+        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/"><i class="fab fa-github"></i></a>
+        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+      </ul>
+    </div>
+            
+    <div class="footer-menu-2">
+      <img src="assets/copyright.png" style="margin-left: -250px;"><a href="#"> Copyright 2024 by HH. All rights reserved</a>
+    </div>
+
+    <button class="scroll-to-top-button" (click)="scrollToTop()"><img src="assets/top.png" width="50%"></button>
   </div>
 </section>
