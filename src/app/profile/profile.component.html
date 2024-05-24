@@ -4,13 +4,13 @@
 
   <form class="search-container" (ngSubmit) = "onSubmit(myForm)" #myForm = "ngForm">
     <div  class="search_1">
-      <input type="text" ngModel class="search-input" id="skill" name="skill" placeholder="Search by your skill" required="Please provide skill name"/>
+      <input type="text" ngModel class="search-input" id="skill" name="skill" placeholder="Search by your skill : for ex: web developer, Mobile App Developer" required="Please provide skill name"/>
       <!-- <span class="search-icon" (click)="searchSkill()"><img src="assets/search.png"></span> -->
     </div>
     
-    <div class="search_2">
+    <!-- <div class="search_2">
       <input type="text" ngModel class="search-input" id="username" name="username" placeholder="Enter Username" required="Please fill username fields!"/>
-    </div>
+    </div> -->
     
     <!-- <div class="search_3">
       <input type="text" [(ngModel)]= "jobTitle" class="search-input" placeholder="Enter Job Title Keywords" />

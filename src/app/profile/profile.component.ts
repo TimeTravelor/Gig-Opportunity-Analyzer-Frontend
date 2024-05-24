@@ -41,7 +41,11 @@ export class ProfileComponent implements OnInit{
 
     if (form.valid) {
       this.formData.append('skill', form.value.skill);
-      this.formData.append('username', form.value.username);
+      const storedUserData = localStorage.getItem('userData');
+      if (storedUserData) {
+        this.user = JSON.parse(storedUserData);
+      } 
+      this.formData.append('username', this.user.username);
 
       this.apiService.searchSkill(this.formData).subscribe(
         (response: any) => {
