@@ -38,10 +38,18 @@ export class LoginComponent {
         },
         (error: { error: { message: any; }; }) => {
           console.error('Login error:', error);
-          this.errorMessage = error.error.message; // Set error message
+          const errorMessage = JSON.stringify(error.error); // Set error message
+          const error1 = JSON.parse(errorMessage);
+          if(error1.error == 'Password is not valid'){
+            alert("Please Enter valid Password, with Uppercase,Lowercase and Special Charachter");
+          }else if (error1.error == 'Email is not valid'){
+           alert('Please enter a valid email');
+          }else if (error1.error == 'User not found'){
+            alert('User Not Found');
+          }else if (error1.error == 'Invalid Password'){
+            alert('Invalid Password');
+        }
           this.successMessage = ''; // Clear success message if there's an error
-          alert('User account does not exist!'); // Show alert and navigate to contact us page
-          this.router.navigate(['/contactus']);
         }
       );
     }

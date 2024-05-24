@@ -7,19 +7,19 @@
               <h2>Register</h2>
 
               <div class="inputbox2" style="margin-top: 20px;">
-                  <input type="text" class="form-control" id="name" name="fullname" required [(ngModel)] = "username" placeholder=" Enter Fullname">
+                  <input type="text" class="form-control" id="name" name="fullname"[(ngModel)] = "username" placeholder=" Enter Fullname">
                   <!-- <label for="name">Full Name</label> -->
                   <img src="assets/fullname.png" alt="uimage" style="width: 20px;">
                   <!-- <small *ngIf="username">Username is {{username}}</small> -->
               </div>
 
               <div class="inputbox2">
-                  <input type="date" class="form-control" id="age" name="age" max="2005-01-01" style="width: 300px;" required ngModel>
+                  <input type="date" class="form-control" id="age" name="age" max="2005-01-01" style="width: 300px;" ngModel>
                   <!-- <label for="age">DOB</label> -->
               </div>
 
               <div class="inputbox2">
-                  <input type="text" class="form-control" id="cn" name="cn" required ngModel placeholder="Enter Contact Number">
+                  <input type="text" class="form-control" id="cn" name="cn" ngModel placeholder="Enter Contact Number">
                   <!-- <label for="contact">Contact No.</label> -->
                   <img src="assets/phone.png" alt="cimage" style="width: 20px;">
               </div>
@@ -35,7 +35,7 @@
                   <label for="country" style="color: #fff;">Country</label>
                   <select id="country" class="form-control" name="country" 
                     style="margin-left: 90px; margin-top: -25px; width: 200px; background: transparent; border: 2px solid rgba(255,255,255,0.8); color: #636c72; background-color: transparent;" 
-                    required [ngModel] = "defaultCountry"
+                    [ngModel] = "defaultCountry"
                   >
                       <option value="AFG">Afghanistan</option>
                       <option value="BAH">Bahrain</option>
@@ -68,7 +68,7 @@
 
               <div class="form-group" style="margin-top: 15px;">
                 <div class="custom-control custom-radio" *ngFor = "let gender of genders">
-                    <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}" required [ngModel] = "defaultGender">
+                    <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}" [ngModel] = "defaultGender">
                     <label class="custom-control-input"  for="{{gender.id}}" style="margin-top: -50px; color: white;">{{gender.value}}</label>
                 </div>
               </div>
@@ -88,7 +88,7 @@
                 </div>
               
               <div class="inputbox2">
-                  <input type="text" class="form-control" id="lp" name="lp" required ngModel placeholder="Enter LinkedIn Link">
+                  <input type="text" class="form-control" id="lp" name="lp" ngModel placeholder="Enter LinkedIn Link">
                   <!-- <label for="lp">Linkedin Profile</label> -->
                   <img src="assets/linkedin.png" alt="lpimage" style="width: 20px;">
                 </div>
@@ -97,7 +97,7 @@
                     <label for="country" style="color: #fff;">Version</label>
                     <select id="country" class="form-control" name="version" 
                     style="margin-left: 90px; margin-top: -25px; width: 200px; background: transparent; border: 2px solid rgba(255,255,255,0.8); color: #636c72; background-color: transparent;" 
-                    required [ngModel] = "defaultVersion">
+                    [ngModel] = "defaultVersion">
                         <option value="Free">Free</option>
                         <option value="Trio">Trio</option>
                         <option value="Deca">Deca</option>

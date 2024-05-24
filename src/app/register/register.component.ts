@@ -57,9 +57,21 @@ export class ContactusComponent {
           alert('User profile has been created!');
           this.router.navigate(['/login']); // navigating to login page
         },
-        (        error: { error: { message: any; }; }) => {
+        (error: { error: { message: any; }; }) => {
           console.error('Signup error:', error);
-          this.errorMessage = error.error.message; // Set error message
+          const errorMessage = JSON.stringify(error.error); // Set error message
+          const error1 = JSON.parse(errorMessage);
+          if(error1.error == 'Password is not valid'){
+            alert("Please Enter valid Password, with Uppercase,Lowercase and Special Charachter");
+          }else if (error1.error == 'Email is not valid'){
+           alert('Please enter a valid email');
+          }else if(error1.error == 'An account is already exist with this Email, please try with another one.'){
+            alert('An account is already exist with this Email, please try with another one');
+          }else if(error1.error == 'That username already exists. Please choose a different one.'){
+            alert('That username already exists. Please choose a different one');
+          }else if(error1.error == 'search version is required'){
+            alert('search version is required');
+          }
           this.successMessage = ''; // Clear success message if there's an error
         }
       );
