@@ -38,10 +38,10 @@
         </ul>
       </div>
   
-      <div class="sidebar2">
+      <!-- <div class="sidebar2">
         <div class="sidebar-item" style="text-align: center;">Total Savings</div>
         <strong style="text-align: center; font-size: 25px;">$500</strong>
-      </div>
+      </div> -->
   
       <div class="sidebar3">
         <div class="sidebar-item" style="text-align: center;">Search Remaining</div>
@@ -49,7 +49,7 @@
       </div>
   
       <div class="sidebar4">
-        <div class="sidebar-item" style="text-align: center;">Version</div>
+        <div class="sidebar-item" style="text-align: center;">Search Version</div>
         <strong style="text-align: center; font-size: 25px;">{{user.searchVersion}}</strong>
       </div>
     </div>
@@ -96,6 +96,10 @@
         <p><strong>LinkedIn:</strong>
           <span *ngIf="!isEditing"> {{ user.linkedIn }}</span>
           <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.linkedIn" type="text" />
+        </p>
+        
+        <p><strong>Search Version:</strong>
+          <input *ngIf="isEditing" class="inputbox2" [(ngModel)]= "user.searchVersion" type="text" />
         </p>
 
         <button *ngIf="!isEditing" (click)="edit()" class="edit-button">Edit</button>
